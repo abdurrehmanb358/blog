@@ -3,11 +3,7 @@ include("index.php");
 include("config.php")
 ?>
 <html lang="en">
-<style>
-  .div{
-    margin-left:535px;
-  }
-</style>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +15,7 @@ include("config.php")
 </head>
 
 <body>
-  <div class="container">
+  <div class="container main-div">
 
     <div class="row mt-5 ">
 
@@ -37,8 +33,8 @@ include("config.php")
             <img class="card-img-top" src="/blog/img/<?php echo $row['image']?>" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title"><?php echo substr($row['title'],0,10)  ?></h5>
-                <p class="card-text"> <?php echo substr($row['content'],0,15) ?></p>
-                <a href="#" class="btn btn-primary">Read More</a>
+                <p class="card-text"> <?php echo substr($row['content'],0,50) ?></p>
+                <a class="btn btn-primary" href='detail.php?id=<?php echo $row["id"] ?>'>Read more</a>
               </div>
 
             </div>
@@ -46,42 +42,7 @@ include("config.php")
             </div>
         <?php
          }}?>
-        </div>
-      </div>
-    </div>
-   <?php
-  //  include("config.php");
-  $sql1 =" SELECT * FROM posts ";
-  $result1 = mysqli_query($conn ,$sql1 ) or die ("quary failed");
-  if (mysqli_num_rows($result1) > 0) {
-     $total_records = mysqli_num_rows($result1);
-     $limit = 3;
-     $total_page = ceil( $total_records/ $limit);
-        echo '<div class="pagination">';
-        for($i = 1; $i <= $total_page; $i++){
 
-         echo '<li><a href="tulip.php?page='.$i.'"></a>'.$i.'</li>';
-
-
-    } 
-       echo '</div>';
-    }
-   
-   ?> 
-<nav aria-label="...">
-  <ul class="pagination pagination-lg">
-    
-    <li><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-  </ul>
-</nav>
-   
-   
-   
-   
-
-</div>
 
 </body>
 

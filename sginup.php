@@ -15,17 +15,13 @@ include("index.php");
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 	<title>signup page</title>
-	<style>
-		.container {
-			margin-top: 50px;
-		}
-	</style>
+	
 </head>
 
 <body>
 
 
-	<div class="container">
+	<div class="container mt-5">
 		<div class="row centered-form">
 			<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
 				<div class="panel panel-default">
