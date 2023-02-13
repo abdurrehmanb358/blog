@@ -285,13 +285,16 @@ input[type=text]:placeholder {
       <input type="email" id="login" class="fadeIn second" name="email" placeholder="email">
       <input type="password" id="password" class="fadeIn third" name="pass" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log In">
+      
     </form>
 
 
     <div id="formFooter">
       <a class="underlineHover" href="">Forgot Password?</a>
     </div>
-
+    <div id="formFooter">
+      <a class="underlineHover" href="sginup.php">Create your account</a>
+    </div>
   </div>
 </div>
 </body>

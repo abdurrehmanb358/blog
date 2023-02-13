@@ -31,5 +31,6 @@ session_destroy();
 <form action="" method="POST">
   <input type="submit" value="Logout" name="logout">
   </form>
+
 </body>
 </html>
