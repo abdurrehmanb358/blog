@@ -11,16 +11,11 @@ $resultUser = $conn->query($getUser);
 // print_r($resultUser->num_rows > 0);EXIT;
 if ($resultUser->num_rows > 0) {
   session_start();
-
-  $_SESSION['email'] = $email;
+  $_SESSION['email'] = "email";
+  
   header("location:home.php");
 } else {
   header("location:login.php");
-  session_destroy();
-  if ($conn->query($sql) === TRUE) {
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
 }
 $conn->close();
 ?>
