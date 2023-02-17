@@ -123,3 +123,124 @@ color: white;
 
 
 </style>
+<?pgp
+$pageno =
+        $no_of_records_per_page = 3;
+        $offset = ($pageno);
+       $total_pages_sql = "SELECT * FROM posts";
+        $result = mysqli_query($conn,$total_pages_sql);
+        $total_rows = mysqli_fetch_array($result)[0];
+        $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+        $sql = "SELECT * FROM posts";
+        $res_data = mysqli_query($conn,$sql);
+        while($row = mysqli_fetch_array($res_data)){
+            //here goes the data
+        }
+        mysqli_close($conn);
+    ?>
+    <ul class="pagination">
+        <li><a href="">First</a></li>
+        <li class="<?php if($pageno <= 1){ echo ''; } ?>">
+            <a href="<?php if($pageno <= 1){ echo ''; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+        </li>
+        <li class="<?php if($pageno >= $total_pages){ echo 'content'; } ?>">
+            <a href="<?php if($pageno >= $total_pages){ echo 'image'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+        </li>
+        <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+    </ul>
+
+
+
+
+    <?php
+
+
+if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
+  $page_no = $_GET['page_no'];
+} else {
+  $page_no = 1;
+}
+$total_records_per_page = 3;
+
+$offset = ($page_no - 1) * $total_records_per_page;
+$previous_page = $page_no - 1;
+$next_page = $page_no + 1;
+$adjacents = "2";
+$result_count = mysqli_query(
+  $conn,
+  "SELECT COUNT(*) As total_records FROM `posts`"
+);
+$total_records = mysqli_fetch_array($result_count);
+$total_records = $total_records['total_records'];
+$total_no_of_pages = ceil($total_records / $total_records_per_page);
+$second_last = $total_no_of_pages - 1; // total pages minus 1
+?>
+<ul class="pagination">
+  <?php if ($page_no > 1) {
+    echo "<li><a href='?home.php'>First Page</a></li>";
+  } ?>
+
+  <li <?php if ($page_no <= 1) {
+        echo "class='disabled'";
+      } ?>>
+    <a <?php if ($page_no > 1) {
+          echo "href='home.php?$total_records_per_page=$previous_page'";
+        } ?>>Previous</a>
+  </li>
+
+  <li <?php if ($page_no >= $total_no_of_pages) {
+        echo "class='disabled'";
+      } ?>>
+    <a <?php if ($page_no < $total_no_of_pages) {
+          echo "href='home.php?$total_records_per_page=$next_page'";
+        } ?>>Next</a>
+  </li>
+
+  <?php if ($page_no < $total_no_of_pages) {
+    echo "<li><a href='?page_no1=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";
+  } ?>
+</ul>
+
+
+  
+
+</script>
+
+<?php
+
+if (isset($_GET['pageno'])) {
+    $pageno = $_GET['pageno'];
+} else {
+    $pageno = 1;
+}
+$no_of_records_per_page = 3;
+$offset = ($pageno-1) * $no_of_records_per_page;
+
+$total_pages_sql = "SELECT COUNT(id) FROM posts";
+// echo  $total_pages_sql;
+// exit;
+
+
+$result = mysqli_query($conn,$total_pages_sql);
+$total_rows = mysqli_fetch_array($result)[0];
+$total_pages = ceil($total_rows / $no_of_records_per_page);
+
+$sql = "SELECT * FROM posts LIMIT $offset, $no_of_records_per_page";
+$res_data = mysqli_query($conn,$sql);
+while($row = mysqli_fetch_array($res_data)){?>
+<?php
+
+}
+mysqli_close($conn);
+?>
+<ul class="pagination">
+<li><a href="?pageno=1">First</a></li>
+<li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+    <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+</li>
+<li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+    <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+</li>
+<li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+</ul>

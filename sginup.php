@@ -24,7 +24,7 @@ include("index.php");
 	<div class="container mt-5">
 		<div class="row centered-form">
 			<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-				<div class="panel panel-default">
+				<div class="panel panel-default" style="margin-top:34px;">
 					<div class="panel-heading">
 						<h3 class="panel-title">please sign up page <small>It's free!</small></h3>
 					</div>
@@ -72,6 +72,8 @@ include("index.php");
 							</div>
 
 							<input type="submit" value="Register" class="btn btn-info btn-block" id="submit">
+							<a href="login.php"class="btn btn-info btn-block">are you have alerad account</a>
+							
                               <div id="damo"></div>
 						</form>
             

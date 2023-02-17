@@ -34,14 +34,14 @@ include("config.php")
                    </h1>
            </div>
        </div>
-       <div class="sm:grid grid-cols-1 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200" >
+       <div class="sm:grid grid-cols-1 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200" style ="width:400px">
                
        <img class="card-img-top" src="/blog/img/<?php echo $row['image']?>" alt="Card image cap" width="100%" height="300px">
                </div>
        <div class="w-4/5 m-auto pt-20">
            <span class="text-gray-500">
            
-           <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
+           <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light" style="text-align:center;">
            <?php echo ($row['content'])?>
        
            </p>

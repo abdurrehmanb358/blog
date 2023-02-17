@@ -16,8 +16,18 @@
   <a href="contect.php">Contact</a>
   <a href="about.php">About</a>
   <a href="news.php">News</a>
-  <a href="home.php">Create post</a>
-  <a href="sginup.php" class="gg">signup</a>
+  <a href="post.php">Create post</a>
+  <?php if(!$_SESSION["email"]):?>
+<a href="sginup.php" class="gg">signup</a>
+<?php endif;?>
+
+  <!-- <a href="logout.php">logout</a> -->
+  
+  
+  
+  
+  
+  <!-- <a href="checksession.php">CheckLogin</a> -->
 
 </div>
 </body>
