@@ -1,5 +1,5 @@
 <?php
-include("index.php");
+
 include("config.php")
 ?>
 <html lang="en">

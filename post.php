@@ -1,20 +1,3 @@
-<?php
-include("index.php");
-include("config.php");
-// unset($_SESSION['email']);
-
-// unset($_SESSION['pass']);
-
-// // destroy the session
-// session_destroy();
-// header("location:login.php");
-
-if(isset($_SESSION['email'])){
-	header("location:post.php");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,6 +23,7 @@ if(isset($_SESSION['email'])){
 </head>
 
 <body>
+
 	<div class="container">
 		<div class="row">
 

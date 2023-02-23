@@ -13,3 +13,6 @@ if ($conn->connect_error) {
 }
 // echo "Connected successfully";
 ?>
+<?php
+session_start();
+?>

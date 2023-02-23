@@ -1,8 +1,3 @@
-<?php
-include("index.php");
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +14,9 @@ include("index.php");
 </head>
 
 <body>
+<?php
+include("nav.php");
+     ?> 
 
 
 	<div class="container mt-5">
@@ -156,22 +154,3 @@ include("index.php");
 </html>
 
 
-<?php
-/* sesstion_start();
-if (!isset($_SESSION['fname'])) {
-	if (isset($_REQUEST['username']) || isset($_REQUEST['lastname']) || isset($_REQUEST['email']) || isset($_REQUEST['password'])) {
-		$fname = $_REQUEST['first_name'];
-		$lname = $_REQUEST['last_name'];
-		$email = $_REQUEST['email'];
-		$pass = $_REQUEST['password'];
-		$_SESSION['fname'] = $fname;
-		$_SESSION['lname'] = $lname;
-		$_SESSION['email'] = $email;
-		$_SESSION['pass'] = $pass;
-
-		header("location:welcome.php");
-	}
-}
-*/
-
-?>

@@ -3,7 +3,7 @@ include("config.php");
 ?>
 
 <?php
-// session_start();
+
 $uname = $_POST["fname"];
 $username = $_POST["lname"];
 $lastname = $_POST["uname"];

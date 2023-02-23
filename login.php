@@ -1,7 +1,4 @@
-<?php
-include("index.php");
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -280,6 +277,10 @@ input[type=text]:placeholder {
 
 </head>
 <body>
+<?php
+include("nav.php");
+     ?>    
+
 <div class="wrapper fadeInDown">
   <div id="formContent" >
     <form action="validation.php" method="POST">
